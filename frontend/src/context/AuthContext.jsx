@@ -4,6 +4,18 @@ import { generateDeviceId, getDeviceInfo } from '../utils/DeviceFingerprint';
 
 export const AuthContext = createContext();
 
+const getApiErrorMessage = (error, fallback) => {
+  if (error.response?.data?.message) {
+    return error.response.data.message;
+  }
+
+  if (error.request) {
+    return 'Cannot reach the server. Please check the API URL, backend deployment, and CORS settings.';
+  }
+
+  return fallback;
+};
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -58,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 
       return userData;
     } catch (error) {
-      throw error.response?.data?.message || 'Login failed';
+      throw getApiErrorMessage(error, 'Login failed');
     }
   };
 
@@ -80,7 +92,7 @@ export const AuthProvider = ({ children }) => {
 
       return userData;
     } catch (error) {
-      throw error.response?.data?.message || 'Verification failed';
+      throw getApiErrorMessage(error, 'Verification failed');
     }
   };
 
@@ -100,7 +112,7 @@ export const AuthProvider = ({ children }) => {
 
       return userData;
     } catch (error) {
-      throw error.response?.data?.message || 'Registration failed';
+      throw getApiErrorMessage(error, 'Registration failed');
     }
   };
 

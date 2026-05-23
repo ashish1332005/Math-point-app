@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { AlertTriangle, Download, ExternalLink, FileText, Image as ImageIcon, Loader2 } from 'lucide-react';
+import { API_BASE_URL } from '../../services/api';
 
 const getFileExtension = (fileUrl = '') => {
   if (!fileUrl) return '';
@@ -32,11 +33,7 @@ const SecureDocumentViewer = ({ materialId, fileUrl, title }) => {
 
     if (materialId) {
       const token = localStorage.getItem('token');
-      const base =
-        import.meta.env.VITE_API_BASE_URL ||
-        (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://mathspoint.onrender.com/api');
-
-      setStreamUrl(`${base}/student/material/${materialId}/stream?token=${encodeURIComponent(token)}`);
+      setStreamUrl(`${API_BASE_URL}/student/material/${materialId}/stream?token=${encodeURIComponent(token)}`);
       return;
     }
 

@@ -24,6 +24,22 @@ const sendErrorResponse = (res, error, fallbackMessage = 'Something went wrong.'
     });
   }
 
+  if (error?.code === 11000) {
+    const duplicateField = Object.keys(error.keyPattern || error.keyValue || {})[0];
+    const duplicateMessages = {
+      email: 'This email is already registered.',
+      normalizedPhone: 'This mobile number is already registered.',
+      studentId: 'This student ID is already registered.',
+      normalizedName: 'This name is already registered. If this is a student or parent name, ask the admin to remove the old unique name index from MongoDB.',
+    };
+
+    return res.status(400).json({
+      message: duplicateMessages[duplicateField] || 'Duplicate record detected.',
+      code: 'DUPLICATE_RECORD',
+      ...(duplicateField ? { field: duplicateField } : {}),
+    });
+  }
+
   return res.status(500).json({
     message: fallbackMessage,
     code: 'INTERNAL_SERVER_ERROR',

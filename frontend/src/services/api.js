@@ -1,13 +1,9 @@
 import axios from 'axios';
 
-const baseURL =
-  import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.DEV
-    ? 'http://localhost:5000/api'
-    : 'https://mathspoint.onrender.com/api');
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://math-point-app.onrender.com/api';
 
 const api = axios.create({
-  baseURL,
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   }
