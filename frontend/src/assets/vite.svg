@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="64" viewBox="0 0 220 64" fill="none" role="img" aria-labelledby="maths-point-logo-title">
+  <title id="maths-point-logo-title">Maths Point</title>
+  <defs>
+    <linearGradient id="shieldBg" x1="12" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4D06F"/>
+      <stop offset="1" stop-color="#B68A1F"/>
+    </linearGradient>
+    <linearGradient id="textAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F4D06F"/>
+      <stop offset="1" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="64" rx="16" fill="#0B0B0B"/>
+  <path d="M32 6L50 13V28C50 39.8 42.44 50.44 32 54C21.56 50.44 14 39.8 14 28V13L32 6Z" fill="url(#shieldBg)"/>
+  <path d="M32 14L41 17.6V27.8C41 35.28 37.08 42.08 32 45.12C26.92 42.08 23 35.28 23 27.8V17.6L32 14Z" fill="#111111"/>
+  <path d="M26 37L30.48 21H33.88L38.32 37H34.92L34.12 33.88H30.12L29.28 37H26ZM30.88 30.92H33.36L32.12 26.08L30.88 30.92Z" fill="url(#textAccent)"/>
+  <circle cx="50" cy="50" r="4" fill="#F4D06F"/>
+  <text x="68" y="29" fill="white" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="0.2">
+    Maths
+  </text>
+  <text x="68" y="50" fill="url(#textAccent)" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="0.2">
+    Point
+  </text>
+  <text x="162" y="50" fill="#9CA3AF" font-family="Montserrat, Arial, sans-serif" font-size="8" font-weight="600" letter-spacing="2.2">
+    COACHING CENTER
+  </text>
+</svg>
