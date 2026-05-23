@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  /* Overriding standard blue with the logo theme (cerulean #0093DD) */
+  --color-blue-50: #f0f9ff;
+  --color-blue-100: #e0f2fe;
+  --color-blue-200: #bae6fd;
+  --color-blue-300: #7dd3fc;
+  --color-blue-400: #38bdf8;
+  --color-blue-500: #0ea5e9;
+  --color-blue-600: #0093DD; 
+  --color-blue-700: #0284c7;
+  --color-blue-800: #0369a1;
+  --color-blue-900: #0c4a6e;
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/20 bg-white/10 shadow-lg backdrop-blur-md;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(circle at top, rgba(0, 147, 221, 0.12), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #f8fafc 45%, #eef2ff 100%);
+  color: #1f2937;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar (PW & Classplus style) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode scrollbar variants */
+.dark ::-webkit-scrollbar-thumb,
+[class*="bg-slate-9"],
+[class*="bg-slate-8"] {
+  scrollbar-color: #334155 transparent;
+}
+
+[class*="bg-slate-9"]::-webkit-scrollbar-thumb,
+[class*="bg-slate-8"]::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+[class*="bg-slate-9"]::-webkit-scrollbar-thumb:hover,
+[class*="bg-slate-8"]::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+::selection {
+  background-color: rgba(0, 147, 221, 0.18);
+  color: #0f172a;
+}
+
+/* Smooth Momentum Scrolling for iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}
