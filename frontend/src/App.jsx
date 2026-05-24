@@ -75,6 +75,7 @@ function App() {
         <Route path="/parent-login" element={<ParentLogin />} />
         <Route path="/teacher-portal-7f4b2k1m" element={<TeacherLogin />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/portal-8a9d3f2c" element={<AdminLogin />} />
         {/* Admin Panel Routes */}
         <Route path="/admin" element={<AdminLayout />}>
