@@ -717,7 +717,7 @@ const AdminStudents = () => {
                 </div>
 
                 <div className="rounded-2xl border border-violet-100 bg-violet-50 px-4 py-3 text-sm text-violet-700">
-                  This teacher will log in from the secure staff portal at <span className="font-semibold">`/portal-8a9d3f2c`</span>.
+                  This teacher will log in from the secure staff portal at <span className="font-semibold">`/teacher-portal-7f4b2k1m`</span>.
                 </div>
               </div>
 

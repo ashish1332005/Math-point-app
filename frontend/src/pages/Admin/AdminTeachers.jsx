@@ -121,7 +121,7 @@ const AdminTeachers = () => {
         </div>
 
         <div className="rounded-2xl border border-violet-100 bg-violet-50 px-4 py-3 text-sm text-violet-700">
-          Teacher will log in from <span className="font-semibold">`/portal-8a9d3f2c`</span>.
+          Teacher will log in from <span className="font-semibold">`/teacher-portal-7f4b2k1m`</span>.
         </div>
 
         <div className="flex justify-end">

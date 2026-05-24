@@ -196,13 +196,6 @@ const TeacherLogin = () => {
               </div>
             </form>
           )}
-
-          <p className="mt-6 text-center text-sm text-slate-400">
-            Administrator?{' '}
-            <Link to="/portal-8a9d3f2c" className="font-medium text-rose-400 hover:text-rose-300">
-              Open admin portal
-            </Link>
-          </p>
         </div>
       </div>
     </div>
