@@ -1,9 +1,19 @@
 import axios from 'axios';
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://math-point-app.onrender.com/api';
+// Ensure the base URL is clean and points to the correct backend
+const getBaseURL = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  if (envUrl) return envUrl;
+
+  // Default to production Render URL if not specified
+  return 'https://math-point-app.onrender.com/api';
+};
+
+export const API_BASE_URL = getBaseURL();
 
 const api = axios.create({
   baseURL: API_BASE_URL,
+  timeout: Number(import.meta.env.VITE_API_TIMEOUT_MS) || 120000, // Render free instances can need a long cold start.
   headers: {
     'Content-Type': 'application/json'
   }
